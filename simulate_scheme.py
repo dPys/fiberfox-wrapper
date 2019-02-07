@@ -7,36 +7,49 @@ default_args = dict(
     numberofcoils=1,
     reversephase="false",
     partialfourier=1,
-    noisevariance=251,
     trep=4000,
-    signalscale=100,
+    signalScale=100,
     tEcho=108,
-    tline=1,
-    tinhom=50,
+    tLine=1,
+    tInhom=50,
     simulatekspace="true",
-    axonradius=0,
+    axonRadius=0,
     diffusiondirectionmode=0,
     fiberseparationthreshold=30,
-    dosimulaterelaxation="true",
-    dodisablepartialvolume="false",
+    doSimulateRelaxation="true",
+    doDisablePartialVolume="false",
 
     # artifacts
+    kspaceLineOffset=0.1,
+    addringing="false",
+
+    doAddMotion="false",
+    randomMotion="false",
+    motionvolumes=(6, 12, 24),
+    translation0=2,
+    translation1=0,
+    translation2=0,
+    rotation0=0,
+    rotation1=0,
+    rotation2=4,
+
+    addnoise="false",
+    noisetype="gaussian",
+    noisevariance=251,
+    addghosts="false",
+
+    addaliasing="false",
+    aliasingfactor=0,
+
+    addspikes="false",
     spikesnum=0,
     spikesscale=1,
-    kspacelineoffset=0.1,
-    eddystrength=0,
-    eddyTau=70,
-    aliasingfactor=0,
-    addringing="false",
-    doaddmotion="false",
-    randommotion="false",
-    #motionvolumes=(6, 12, 24),
-    addnoise="false",
-    addghosts="false",
-    addaliasing="false",
-    addspikes="false",
+
     addeddycurrents="false",
-    doadddistortions="false",
+    eddyStrength=0,
+    eddyTau=70,
+
+    doAddDistortions="false",
 
     # image
     outputvolumefractions="false",
@@ -92,8 +105,7 @@ class FiberFoxSimulation(object):
         self.output_ffp = os.path.join(self.output_dir, "param.ffp")
 
     def ffp_string(self):
-        ffp = """\
-        <?xml version="1.0" encoding="utf-8"?>
+        ffp = """<?xml version="1.0" encoding="utf-8"?>
 <fiberfox>
 {fibers}
 {image}
@@ -141,44 +153,55 @@ class FiberFoxSimulation(object):
   <image>
 {basic}
 {gradients}
-    <acquisitiontype>0</acquisitiontype>
-    <coilsensitivityprofile>0</coilsensitivityprofile>
-    <numberofcoils>1</numberofcoils>
-    <reversephase>false</reversephase>
-    <partialfourier>1</partialfourier>
-    <noisevariance>251</noisevariance>
-    <trep>4000</trep>
-    <signalScale>100</signalScale>
+    <acquisitiontype>{acquisitiontype}</acquisitiontype>
+    <coilsensitivityprofile>{coilsensitivityprofile}</coilsensitivityprofile>
+    <numberofcoils>{numberofcoils}</numberofcoils>
+    <reversephase>{reversephase}</reversephase>
+    <partialfourier>{partialfourier}</partialfourier>
+    <noisevariance>{noisevariance}</noisevariance>
+    <trep>{trep}</trep>
+    <signalScale>{signalScale}</signalScale>
     <tEcho>{tEcho}</tEcho>
-    <tLine>1</tLine>
-    <tInhom>50</tInhom>
+    <tLine>{tLine}</tLine>
+    <tInhom>{tInhom}</tInhom>
     <bvalue>{bvalue}</bvalue>
-    <simulatekspace>true</simulatekspace>
-    <axonRadius>0</axonRadius>
-    <diffusiondirectionmode>0</diffusiondirectionmode>
-    <fiberseparationthreshold>30</fiberseparationthreshold>
-    <doSimulateRelaxation>true</doSimulateRelaxation>
-    <doDisablePartialVolume>false</doDisablePartialVolume>
+    <simulatekspace>{simulatekspace}</simulatekspace>
+    <axonRadius>{axonRadius}</axonRadius>
+    <diffusiondirectionmode>{diffusiondirectionmode}</diffusiondirectionmode>
+    <fiberseparationthreshold>{fiberseparationthreshold}</fiberseparationthreshold>
+    <doSimulateRelaxation>{doSimulateRelaxation}</doSimulateRelaxation>
+    <doDisablePartialVolume>{doDisablePartialVolume}</doDisablePartialVolume>
     <artifacts>
-      <spikesnum>10</spikesnum>
+      <spikesnum>0</spikesnum>
       <spikesscale>1</spikesscale>
-      <kspaceLineOffset>0.1</kspaceLineOffset>
-      <eddyStrength>0</eddyStrength>
+      <kspaceLineOffset>{kspaceLineOffset}</kspaceLineOffset>
+      <eddyStrength>{eddyStrength}</eddyStrength>
       <eddyTau>{eddyTau}</eddyTau>
-      <aliasingfactor>1</aliasingfactor>
-      <addringing>false</addringing>
-      <addnoise>false</addnoise>
-      <addghosts>false</addghosts>
-      <addaliasing>false</addaliasing>
-      <addspikes>false</addspikes>
-      <addeddycurrents>false</addeddycurrents>
-      <doAddDistortions>false</doAddDistortions>
+      <aliasingfactor>{aliasingfactor}</aliasingfactor>
+      <addringing>{addringing}</addringing>
+      <doAddMotion>{doAddMotion}</doAddMotion>
+      <randomMotion>{randomMotion}</randomMotion>
+      <translation0>{translation0}</translation0>
+      <translation1>{translation1}</translation1>
+      <translation2>{translation2}</translation2>
+      <rotation0>{rotation0}</rotation0>
+      <rotation1>{rotation1}</rotation1>
+      <rotation2>{rotation2}</rotation2>
+      <motionvolumes>{motionvolumes}</motionvolumes>
+      <addnoise>{addnoise}</addnoise>
+      <addghosts>{addghosts}</addghosts>
+      <addaliasing>{addaliasing}</addaliasing>
+      <addspikes>{addspikes}</addspikes>
+      <addeddycurrents>{addeddycurrents}</addeddycurrents>
+      <doAddDistortions>{doAddDistortions}</doAddDistortions>
+      <noisevariance>{noisevariance}</noisevariance>
+      <noisetype>{noisetype}</noisetype>
     </artifacts>
     <outputvolumefractions>{outputvolumefractions}</outputvolumefractions>
     <showadvanced>true</showadvanced>
     <signalmodelstring>StickTensorBallBall</signalmodelstring>
     <artifactmodelstring>{artifactmodelstring}</artifactmodelstring>
-    <outpath/>
+    <outpath>/out/</outpath>
 {compartments}
   </image>
 """.format(basic=self._format_image_basic(),
@@ -188,10 +211,46 @@ class FiberFoxSimulation(object):
            outputvolumefractions=self.outputvolumefractions,
            eddyTau=self.eddyTau,
            bvalue=self.bvals.max(),
-           tEcho=self.tEcho
+           tEcho=self.tEcho,
+           addghosts=self.addghosts,
+           addaliasing=self.addaliasing,
+           addspikes=self.addspikes,
+           noisetype=self.noisetype,
+           noiasevariance=self.noisevariance,
+           addeddycurrents=self.addeddycurrents,
+           motionvolumes=" ".join(map(str, self.motionvolumes)),
+           doAddDistortions=self.doAddDistortions,
+           addnoise=self.addnoise,
+           doAddMotion=self.doAddMotion,
+           randomMotion=self.randomMotion,
+           rotation0=self.rotation0,
+           rotation1=self.rotation1,
+           rotation2=self.rotation2,
+           translation0=self.translation0,
+           translation1=self.translation1,
+           translation2=self.translation2,
+           addringing=self.addringing,
+           aliasingfactor=self.aliasingfactor,
+           eddyStrength=self.eddyStrength,
+           acquisitiontype=self.acquisitiontype,
+           coilsensitivityprofile=self.coilsensitivityprofile,
+           numberofcoils=self.numberofcoils,
+           reversephase=self.reversephase,
+           partialfourier=self.partialfourier,
+           noisevariance=self.noisevariance,
+           trep=self.trep,
+           signalScale=self.signalScale,
+           tLine=self.tLine,
+           tInhom=self.tInhom,
+           simulatekspace=self.simulatekspace,
+           axonRadius=self.axonRadius,
+           diffusiondirectionmode=self.diffusiondirectionmode,
+           fiberseparationthreshold=self.fiberseparationthreshold,
+           doSimulateRelaxation=self.doSimulateRelaxation,
+           doDisablePartialVolume=self.doDisablePartialVolume,
+           kspaceLineOffset=self.kspaceLineOffset
            )
         return image_str
-
 
     def _format_image_basic(self):
         xvoxels, yvoxels, zvoxels = (default_fov / self.voxel_size).astype(np.int)
@@ -230,7 +289,6 @@ class FiberFoxSimulation(object):
                        yvoxels=yvoxels,
                        zvoxels=zvoxels)
         return basic_str
-
 
     def _format_image_gradients(self):
         dir_str = """
@@ -295,34 +353,40 @@ class FiberFoxSimulation(object):
       </3>
     </compartments>"""
 
-
     def write_ffp(self):
         if not os.path.exists(self.output_dir):
             os.makedirs(self.output_dir)
         with open(self.output_ffp, "w") as f:
             f.write(self.ffp_string())
 
-
-    def run_simulation(self):
+    def run_simulation(self, singularity_image=""):
         self.write_ffp()
 
-        cmd = "docker run " \
-              "-v {output_dir}:/out " \
-              "-v {ffp_file}:/ismrm/FilesForSimulation/param.ffp " \
-              "pennbbl/fiberfox:latest " \
-              "-i /ismrm/FilesForSimulation/Fibers.fib " \
-              "-p /ismrm/FilesForSimulation/param.ffp " \
-              "--verbose " \
-              "-o /out ".format(output_dir=self.output_dir,
-                                ffp_file=self.output_ffp)
+        if not singularity_image:
+            cmd = "docker run " \
+                  "-v {output_dir}:/out " \
+                  "pennbbl/fiberfox:latest " \
+                  "-i /ismrm/FilesForSimulation/Fibers.fib " \
+                  "-p /out/param.ffp " \
+                  "--verbose " \
+                  "-o /out ".format(output_dir=self.output_dir,
+                                    ffp_file=self.output_ffp)
+        else:
+            cmd = "singularity run " \
+                  "-B {output_dir}:/out " \
+                  "{image} " \
+                  "-i /ismrm/FilesForSimulation/Fibers.fib " \
+                  "-p /out/param.ffp " \
+                  "--verbose " \
+                  "-o /out ".format(image=singularity_image,
+                                    output_dir=self.output_dir,
+                                    ffp_file=self.output_ffp)
         print(cmd)
         os.system(cmd)
 
 
-
-
-
-def simulate(bvecs_file, bvals_file, output_dir, b2q=True, voxel_size=2, **kwargs):
+def simulate(bvecs_file, bvals_file, output_dir, singularity_image="", b2q=True,
+             voxel_size=2, **kwargs):
     default_args.update(kwargs)
     simulator = FiberFoxSimulation(np.loadtxt(bvals_file),
                                    np.loadtxt(bvecs_file).T,
@@ -330,4 +394,4 @@ def simulate(bvecs_file, bvals_file, output_dir, b2q=True, voxel_size=2, **kwarg
                                    voxel_size=voxel_size,
                                    b2q=b2q,
                                    **default_args)
-    simulator.run_simulation()
+    simulator.run_simulation(singularity_image=singularity_image)
