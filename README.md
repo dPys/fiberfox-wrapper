@@ -34,7 +34,7 @@ simulate("gradients/hcp_multishell.bvec", "gradients/hcp_multishell.bval",
 
 If you're using Docker instead of Singularity, set `singularity_image=""`. After these arguments,
 you can add anything that goes into the Fiberfox `ffp` file format. Here are the currently
-available options
+available options (documentation [here](http://docs.mitk.org/nightly/org_mitk_views_fiberfoxview.html))
 
 ```python
 # Acquisition parameters
