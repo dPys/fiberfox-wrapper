@@ -25,9 +25,9 @@ RUN apt-get update && \
 # Download fiberfox
 RUN mkdir /fiberfox \
     && cd /fiberfox \
-    && wget -nv https://www.nitrc.org/frs/downloadlink.php/10130 \
-    && tar xvfz 10130 \
-    && rm 10130
+    && wget -nv ftp://ftp.dkfz-heidelberg.de/outgoing/MitkDiffusion/2019-01-25/MITK-Diffusion_Ubuntu-16.04-xenial_2018.09.99_2019-01-25_d7b3fd4d9e65.tar.gz \
+    && tar xvfz MITK-Diffusion_Ubuntu-16.04-xenial_2018.09.99_2019-01-25_d7b3fd4d9e65.tar.gz \
+    && rm MITK-Diffusion_Ubuntu-16.04-xenial_2018.09.99_2019-01-25_d7b3fd4d9e65.tar.gz
 
 # Download the test data
 RUN mkdir /ismrm \
@@ -55,12 +55,11 @@ RUN apt-get install -y \
       libgtk2.0 \
       libtiff5 \
       libxtst6 \
-      libxtst-dev \
-      gnome-core
+      libxtst-dev
 
 
-ENV LD_LIBRARY_PATH="/fiberfox/MITK-Diffusion-2017.07-linux64/bin":"/fiberfox/MITK-Diffusion-2017.07-linux64/bin/plugins":$LD_LIBRARY_PATH \
-    QT_QPA_PLATFORM_PLUGIN_PATH=/fiberfox/MITK-Diffusion-2017.07-linux64/bin
+ENV LD_LIBRARY_PATH="/fiberfox/MITK-Diffusion-2018.09.99-linux64/bin":"/fiberfox/MITK-Diffusion-2018.09.99-linux64/bin/plugins":$LD_LIBRARY_PATH \
+    QT_QPA_PLATFORM_PLUGIN_PATH=/fiberfox/MITK-Diffusion-2018.09.99-linux64/bin
 
 COPY run_fiberfox.sh /usr/local/bin/docker-entrypoint.sh
 RUN ln -s /usr/local/bin/docker-entrypoint.sh / \
