@@ -95,7 +95,8 @@ default_args = dict(
 default_fov = np.array([90, 108, 90]) * 2
 
 class FiberFoxSimulation(object):
-    def __init__(self, bvals, bvecs, output_dir, voxel_size = 2, b2q=False, **kwargs):
+    def __init__(self, bvals, bvecs, output_dir, voxel_size = 2, b2q=False, 
+                 **kwargs):
         self.__dict__.update(kwargs)
         self.bvals = bvals
         self.bvecs = bvecs
@@ -103,6 +104,10 @@ class FiberFoxSimulation(object):
         self.voxel_size = voxel_size
         self.b2q = b2q
         self.output_ffp = os.path.join(self.output_dir, "param.ffp")
+        self.motion_percent = self.motion_percent / 100
+        # Randomly choose volumes 
+        self.motionvolumes = np.arange(len(self.bvals), dtype=np.int)
+            
 
     def ffp_string(self):
         ffp = """<?xml version="1.0" encoding="utf-8"?>
