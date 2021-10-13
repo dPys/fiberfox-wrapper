@@ -1,17 +1,29 @@
-#!/usr/bin/env python
 import os
 import numpy as np
+import tempfile
+import shutil
+import glob
+import itertools
+#import time
+import json
+import asyncio
+import subprocess
+from joblib import Parallel, delayed
+from pathlib import Path
+from nipype.utils.filemanip import copyfile, fname_presuffix
+
 default_args = dict(
     acquisitiontype=0,
     coilsensitivityprofile=0,
     numberofcoils=1,
-    reversephase="false",
     partialfourier=1,
     trep=4000,
     signalScale=100,
     tEcho=108,
     tLine=1,
     tInhom=50,
+    tinv=0, #new
+    echoTrainLength=8, #new
     simulatekspace="true",
     axonRadius=0,
     diffusiondirectionmode=0,
@@ -22,20 +34,14 @@ default_args = dict(
     # artifacts
     kspaceLineOffset=0.1,
     addringing="false",
-
-    doAddMotion="false",
-    randomMotion="false",
-    motionvolumes=(6, 12, 24),
-    translation0=2,
-    translation1=0,
-    translation2=0,
-    rotation0=0,
-    rotation1=0,
-    rotation2=4,
+    drift=0.06, #new
+    zeroringing=0, #new
+    doAddDrift=0, #new
 
     addnoise="false",
     noisetype="gaussian",
-    noisevariance=251,
+    noisevariance=0, # 0 or 251
+
     addghosts="false",
 
     addaliasing="false",
@@ -45,8 +51,6 @@ default_args = dict(
     spikesnum=0,
     spikesscale=1,
 
-    addeddycurrents="false",
-    eddyStrength=0,
     eddyTau=70,
 
     doAddDistortions="false",
@@ -55,7 +59,6 @@ default_args = dict(
     outputvolumefractions="false",
     showadvanced="true",
     signalmodelstring="StickTensorBallBall",
-    artifactmodelstring="_COMPLEX-GAUSSIAN-251",
 
     compartments = [
         {"type": "fiber",
@@ -92,22 +95,24 @@ default_args = dict(
 
 )
 
-default_fov = np.array([90, 108, 90]) * 2
-
 class FiberFoxSimulation(object):
-    def __init__(self, bvals, bvecs, output_dir, voxel_size = 2, b2q=False, 
-                 **kwargs):
+    def __init__(self, bvals, bvecs, dirpath, voxel_size, doAddMotion, randomMotion, motion_volumes, addeddycurrents, reversephase, default_fov, motion_bounds, eddyStrength, artifactmodelstring, b2q, **kwargs):
         self.__dict__.update(kwargs)
         self.bvals = bvals
         self.bvecs = bvecs
-        self.output_dir = output_dir
+        self.dirpath = dirpath
         self.voxel_size = voxel_size
+        self.doAddMotion = doAddMotion
+        self.randomMotion = randomMotion
+        self.motionvolumes = motion_volumes
+        self.addeddycurrents = addeddycurrents
+        self.reversephase = reversephase
+        self.default_fov = default_fov
+        self.eddyStrength = eddyStrength
         self.b2q = b2q
-        self.output_ffp = os.path.join(self.output_dir, "param.ffp")
-        self.motion_percent = self.motion_percent / 100
-        # Randomly choose volumes 
-        self.motionvolumes = np.arange(len(self.bvals), dtype=np.int)
-            
+        self.artifactmodelstring = artifactmodelstring
+        self.output_ffp = os.path.join(self.dirpath, "param.ffp")
+        self.rotation0, self.rotation1, self.rotation2, self.translation0, self.translation1, self.translation2 = motion_bounds
 
     def ffp_string(self):
         ffp = """<?xml version="1.0" encoding="utf-8"?>
@@ -169,6 +174,8 @@ class FiberFoxSimulation(object):
     <tEcho>{tEcho}</tEcho>
     <tLine>{tLine}</tLine>
     <tInhom>{tInhom}</tInhom>
+    <tinv>{tinv}</tinv>
+    <echoTrainLength>{echoTrainLength}</echoTrainLength>
     <bvalue>{bvalue}</bvalue>
     <simulatekspace>{simulatekspace}</simulatekspace>
     <axonRadius>{axonRadius}</axonRadius>
@@ -184,6 +191,9 @@ class FiberFoxSimulation(object):
       <eddyTau>{eddyTau}</eddyTau>
       <aliasingfactor>{aliasingfactor}</aliasingfactor>
       <addringing>{addringing}</addringing>
+      <drift>{drift}</drift>
+      <zeroringing>{zeroringing}</zeroringing>
+      <doAddDrift>{doAddDrift}</doAddDrift>
       <doAddMotion>{doAddMotion}</doAddMotion>
       <randomMotion>{randomMotion}</randomMotion>
       <translation0>{translation0}</translation0>
@@ -217,6 +227,8 @@ class FiberFoxSimulation(object):
            eddyTau=self.eddyTau,
            bvalue=self.bvals.max(),
            tEcho=self.tEcho,
+           tinv=self.tinv,
+           echoTrainLength=self.echoTrainLength,
            addghosts=self.addghosts,
            addaliasing=self.addaliasing,
            addspikes=self.addspikes,
@@ -235,6 +247,9 @@ class FiberFoxSimulation(object):
            translation1=self.translation1,
            translation2=self.translation2,
            addringing=self.addringing,
+           drift=self.drift, #new
+           zeroringing=self.zeroringing, #new
+           doAddDrift=self.doAddDrift, #new
            aliasingfactor=self.aliasingfactor,
            eddyStrength=self.eddyStrength,
            acquisitiontype=self.acquisitiontype,
@@ -258,7 +273,7 @@ class FiberFoxSimulation(object):
         return image_str
 
     def _format_image_basic(self):
-        xvoxels, yvoxels, zvoxels = (default_fov / self.voxel_size).astype(np.int)
+        xvoxels, yvoxels, zvoxels = (self.default_fov / self.voxel_size).astype(np.int32)
         basic_str = """\
     <basic>
       <size>
@@ -310,8 +325,8 @@ class FiberFoxSimulation(object):
 
         direction_elements = []
         for dirnum, scaled_vector in enumerate(scaled_vectors):
-          x, y, z = scaled_vector
-          direction_elements.append(dir_str.format(x=x, y=y, z=z, dirnum=dirnum))
+              x, y, z = scaled_vector
+              direction_elements.append(dir_str.format(x=x, y=y, z=z, dirnum=dirnum))
 
         gradient_str = """\
     <gradients>
@@ -359,44 +374,256 @@ class FiberFoxSimulation(object):
     </compartments>"""
 
     def write_ffp(self):
-        if not os.path.exists(self.output_dir):
-            os.makedirs(self.output_dir)
-        with open(self.output_ffp, "w") as f:
+        with open(self.output_ffp, "w+") as f:
             f.write(self.ffp_string())
+        f.close()
 
-    def run_simulation(self, singularity_image=""):
+        if os.path.isfile(self.output_ffp) is False:
+            raise FileNotFoundError(f"\n\nFailed to find {self.output_ffp}...")
+            return 1
+        else:
+            #print(f"Parameters file: {self.output_ffp}\n\n{self.ffp_string()}")
+            print(f"Parameters file: {self.output_ffp}")
+            #time.sleep(2)
+
+
+    def run_simulation(self, run_method, fiber_tmp):
         self.write_ffp()
 
-        if not singularity_image:
-            cmd = "docker run " \
-                  "-v {output_dir}:/out " \
-                  "pennbbl/fiberfox:latest " \
-                  "-i /ismrm/FilesForSimulation/Fibers.fib " \
-                  "-p /out/param.ffp " \
-                  "--verbose " \
-                  "-o /out ".format(output_dir=self.output_dir,
-                                    ffp_file=self.output_ffp)
+        if run_method == "Docker":
+            cmd = ["bash", f"docker run",
+                  f"-v",
+                  f"{self.dirpath}:/out",
+                  f"pennbbl/fiberfox:latest",
+                  f"-i",
+                  f"/ismrm/FilesForSimulation/Fibers.fib",
+                  f"-p",
+                  f"/out/param.ffp",
+                  f"--verbose",
+                  f"-o",
+                  f"/outs"]
+        elif run_method.endswith(".simg"):
+            cmd = ["bash", f"singularity run",
+                  f"-B",
+                  f"{self.dirpath}:/out",
+                  f"{run_method}",
+                  f"-i",
+                  f"/ismrm/FilesForSimulation/Fibers.fib",
+                  f"-p",
+                  f"/out/param.ffp",
+                  f"--verbose",
+                  f"-o",
+                  f"/out"]
         else:
-            cmd = "singularity run " \
-                  "-B {output_dir}:/out " \
-                  "{image} " \
-                  "-i /ismrm/FilesForSimulation/Fibers.fib " \
-                  "-p /out/param.ffp " \
-                  "--verbose " \
-                  "-o /out ".format(image=singularity_image,
-                                    output_dir=self.output_dir,
-                                    ffp_file=self.output_ffp)
-        print(cmd)
-        os.system(cmd)
+            cmd = ["bash", run_method,
+                  f"-i",
+                  fiber_tmp,
+                  f"-p",
+                  f"{self.output_ffp}",
+                  f"--verbose",
+                  f"-o",
+                  f"{self.dirpath}"]
+
+        #print(cmd)
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, text=True)
+        (output, err) = p.communicate()
+        p_status = p.wait()
+        if (p_status == 0):
+            return output
+        else:
+            raise subprocess.ProcessException(cmd, p_status, err)
+        # p = subprocess.Popen(cmd)
+        # p.terminate()
 
 
-def simulate(bvecs_file, bvals_file, output_dir, singularity_image="", b2q=True,
-             voxel_size=2, **kwargs):
+def simulate(bvecs_file, bvals_file, output_dir, run_method, sim_templates_dir,
+             voxel_size, head_motion, random_motion, eddy, reverse_phase,
+             motion_level, motion_percent_vols, eddy_level, b2q=True, **kwargs):
     default_args.update(kwargs)
-    simulator = FiberFoxSimulation(np.loadtxt(bvals_file),
-                                   np.loadtxt(bvecs_file).T,
-                                   output_dir,
-                                   voxel_size=voxel_size,
-                                   b2q=b2q,
-                                   **default_args)
-    simulator.run_simulation(singularity_image=singularity_image)
+
+    try:
+        bvals_arr = np.loadtxt(bvals_file)
+    except:
+        return print(f"{bvals_file} not found!")
+
+    num_vols = len(np.arange(len(bvals_arr), dtype=np.int32))
+    num_noise_vols = np.ceil(motion_percent_vols*num_vols).astype('int32')
+
+    combo=""
+
+    detailed_data = {}
+
+    if head_motion is True:
+        doAddMotion = "true"
+        motion_volumes = tuple(np.random.randint(0, num_vols, (1, num_noise_vols)).tolist()[0])
+
+        detailed_data['motion_vols'] = motion_volumes
+
+        if random_motion is True:
+            randomMotion = "true"
+            combo = combo + '_HM_TYPE-random'
+        else:
+            randomMotion = "false"
+            combo = combo + '_HM_TYPE-linear'
+
+        combo = combo + '-LEVEL-' + motion_level
+        combo = combo + f"-EXTENT-{np.round(100*motion_percent_vols, 2)}%"
+
+        if motion_level == "severe":
+            rotation0 = 8
+            rotation1 = 8
+            rotation2 = 8
+            translation0 = 8
+            translation1 = 8
+            translation2 = 8
+        elif motion_level == "moderate":
+            rotation0 = 5
+            rotation1 = 5
+            rotation2 = 5
+            translation0 = 5
+            translation1 = 5
+            translation2 = 5
+        elif motion_level == "mild":
+            rotation0 = 2
+            rotation1 = 2
+            rotation2 = 2
+            translation0 = 2
+            translation1 = 2
+            translation2 = 2
+    else:
+        motion_volumes = (0)
+        doAddMotion = "false"
+        randomMotion = "false"
+        rotation0 = 0
+        rotation1 = 0
+        rotation2 = 0
+        translation0 = 0
+        translation1 = 0
+        translation2 = 0
+
+    motion_bounds = [rotation0, rotation1, rotation2, translation0, translation1, translation2]
+
+    if eddy is True:
+        addeddycurrents="true"
+        combo = combo + '_EDDY'
+        if eddy_level=="severe": # Uncompensated eddy-current gradient amplitudes are typically < 1% of the pulsed-gradient amplitude, whose maximum ranges from 40 − 80 mT/m. If we measure this in mT/m at the beginning of the k-space readout, and assume that a spatially linear eddy current profile in the direction of the respective diffusion-weighting gradient is used, then this value should be <0.1
+            eddyStrength = 0.01
+        elif eddy_level=="moderate":
+            eddyStrength = 0.005
+        else:
+            eddyStrength = 0.001
+        combo = combo + '-LEVEL-' + eddy_level
+    else:
+        eddyStrength = 0
+        addeddycurrents = "false"
+
+    if reverse_phase is True:
+        reversephase="true"
+        combo = combo + '_REVPHASE'
+    else:
+        reversephase="false"
+
+    default_fov = np.array([90, 108, 90]) * voxel_size
+
+    dirpath = tempfile.mkdtemp()
+    req_fils = glob.glob(f"{sim_templates_dir}/*")
+
+    fiber_tmp = f"/var/tmp/Fibers_{os.path.basename(dirpath)}.fib"
+
+    print("Copying template files...")
+    for f_ in req_fils:
+        if 'Fibers.fib' in f_:
+            copyfile(
+            f_,
+            fiber_tmp,
+            copy=True,
+            use_hardlink=False)
+        else:
+            f_tmp_path = fname_presuffix(
+                f_, suffix="_tmp", newpath=dirpath
+            )
+            copyfile(
+            f_,
+            f_tmp_path,
+            copy=True,
+            use_hardlink=False)
+
+    #print(glob.glob(f"{dirpath}/*"))
+    #return
+
+    seq_name = os.path.basename(bvecs_file).split('.')[0]
+    #artifactmodelstring = f"fbfx_SEQ-{seq_name}_VOX-{voxel_size}mm_FOV-{default_fov[0]}x{default_fov[1]}x{default_fov[2]}{combo}"
+    artifactmodelstring = f"fbfx_SEQ-{seq_name}{combo}"
+    out_basename = f"{output_dir}/{artifactmodelstring}"
+
+    try:
+        simulator = FiberFoxSimulation(bvals_arr,
+                                       np.loadtxt(bvecs_file).T,
+                                       dirpath,
+                                       voxel_size=voxel_size,
+                                       doAddMotion=doAddMotion,
+                                       randomMotion=randomMotion,
+                                       motion_volumes=motion_volumes,
+                                       addeddycurrents=addeddycurrents,
+                                       reversephase=reversephase,
+                                       default_fov=default_fov,
+                                       motion_bounds=motion_bounds,
+                                       eddyStrength=eddyStrength,
+                                       artifactmodelstring=artifactmodelstring,
+                                       b2q=b2q,
+                                       **default_args)
+        simulator.run_simulation(run_method=run_method, fiber_tmp=fiber_tmp)
+
+        shutil.copy(f"{dirpath}/fiberfox.nii.gz", f"{out_basename}.nii.gz")
+        shutil.copy(f"{dirpath}/fiberfox_Phase.nii.gz", f"{out_basename}_phase.nii.gz")
+        shutil.copy(f"{dirpath}/fiberfox_kSpace.nii.gz", f"{out_basename}_kspace.nii.gz")
+        shutil.copy(f"{dirpath}/fiberfox_Coil-1-real.nii.gz", f"{out_basename}_Coil-1-real.nii.gz")
+        shutil.copy(f"{dirpath}/fiberfox_Coil-1-imag.nii.gz", f"{out_basename}_Coil-1-imag.nii.gz")
+        shutil.copy(f"{dirpath}/fiberfox.bvecs", f"{out_basename}.bvecs")
+        shutil.copy(f"{dirpath}/fiberfox.bvals", f"{out_basename}.bvals")
+
+        with open(f"{out_basename}_info.json", 'w', encoding='utf-8') as f:
+            json.dump(detailed_data, f, ensure_ascii=False, indent=4)
+
+    except:
+        return print(f"FiberFoxSimulation failed for {seq_name}...")
+    shutil.rmtree(dirpath)
+    os.remove(fiber_tmp)
+
+
+def simulator(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb):
+    [head_motion, random_motion, eddy, reverse_phase, motion_level, motion_percent_vols, eddy_level] = comb
+
+    print("\n\n", grad_pref, comb, "\n\n")
+
+    simulate(f"{gradients_dir}/{grad_pref}.bvec", f"{gradients_dir}/{grad_pref}.bval",
+             output_dir=output_dir, run_method=run_method, sim_templates_dir=sim_templates_dir,
+             voxel_size=2, head_motion=head_motion, random_motion=random_motion, eddy=eddy, reverse_phase=reverse_phase, motion_level=motion_level, motion_percent_vols=motion_percent_vols, eddy_level=eddy_level)
+    return
+
+if __name__ == '__main__':
+    choices = [[True, False], [True, False], [True, False], [False], ["severe", "mild"], [0.25, 0.75], ["severe", "mild"]]
+    combs = list(itertools.product(*choices))
+
+    gradients_dir = f"/home/dpys/Applications/fiberfox-wrapper/gradients"
+    sim_templates_dir = "/home/dpys/Applications/FilesForSimulation"
+    output_dir = "/mnt/dpys/data/fiberfox_sims"
+
+    grad_prefixes = [j for j in set([os.path.basename(i).split('.bvec')[0] for i in glob.glob(f"{gradients_dir}/*")]) if 'bval' not in j]
+
+    #grad_prefixes = ['hcp_multishell', 'SingleShell']
+    grad_prefixes = ['SingleShell']
+
+    #run_method = "/home/dpys/Applications/fiberfox-wrapper/fiberfox.simg"
+    run_method = "/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh" # options are "Docker", "PATH/TO/*.simg", "PATH/TO/MitkFiberfox.sh"
+
+    for grad_pref in grad_prefixes:
+        with Parallel(n_jobs=32, prefer="threads") as parallel:
+            outs = parallel(delayed(simulator)(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb) for comb in combs)
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
+
+#ps -ef | grep 'MitkFiberfox' | grep -v grep | awk '{print $2}' | xargs -r kill -9
+#ps -ef | grep 'fiberfox' | grep -v grep | awk '{print $2}' | xargs -r kill -9
+
