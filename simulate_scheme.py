@@ -111,7 +111,7 @@ class FiberFoxSimulation(object):
         self.eddyStrength = eddyStrength
         self.b2q = b2q
         self.artifactmodelstring = artifactmodelstring
-        self.output_ffp = os.path.join(self.dirpath, "param.ffp")
+        self.output_ffp = os.path.join(self.dirpath, f"{artifactmodelstring}.ffp")
         self.rotation0, self.rotation1, self.rotation2, self.translation0, self.translation1, self.translation2 = motion_bounds
 
     def ffp_string(self):
@@ -386,7 +386,6 @@ class FiberFoxSimulation(object):
             print(f"Parameters file: {self.output_ffp}")
             #time.sleep(2)
 
-
     def run_simulation(self, run_method, fiber_tmp):
         self.write_ffp()
 
@@ -398,7 +397,7 @@ class FiberFoxSimulation(object):
                   f"-i",
                   f"/ismrm/FilesForSimulation/Fibers.fib",
                   f"-p",
-                  f"/out/param.ffp",
+                  f"{self.output_ffp}",
                   f"--verbose",
                   f"-o",
                   f"/outs"]
@@ -410,7 +409,7 @@ class FiberFoxSimulation(object):
                   f"-i",
                   f"/ismrm/FilesForSimulation/Fibers.fib",
                   f"-p",
-                  f"/out/param.ffp",
+                  f"{self.output_ffp}",
                   f"--verbose",
                   f"-o",
                   f"/out"]
@@ -424,7 +423,7 @@ class FiberFoxSimulation(object):
                   f"-o",
                   f"{self.dirpath}"]
 
-        #print(cmd)
+        print(cmd)
         p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, text=True)
         (output, err) = p.communicate()
         p_status = p.wait()
@@ -432,8 +431,6 @@ class FiberFoxSimulation(object):
             return output
         else:
             raise subprocess.ProcessException(cmd, p_status, err)
-        # p = subprocess.Popen(cmd)
-        # p.terminate()
 
 
 def simulate(bvecs_file, bvals_file, output_dir, run_method, sim_templates_dir,
@@ -618,12 +615,8 @@ if __name__ == '__main__':
     run_method = "/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh" # options are "Docker", "PATH/TO/*.simg", "PATH/TO/MitkFiberfox.sh"
 
     for grad_pref in grad_prefixes:
-        with Parallel(n_jobs=32, prefer="threads") as parallel:
+        with Parallel(n_jobs=4, backend='threading') as parallel:
             outs = parallel(delayed(simulator)(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb) for comb in combs)
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
-
-#ps -ef | grep 'MitkFiberfox' | grep -v grep | awk '{print $2}' | xargs -r kill -9
-#ps -ef | grep 'fiberfox' | grep -v grep | awk '{print $2}' | xargs -r kill -9
-
+#loop = asyncio.get_event_loop()
+#loop.run_until_complete(main())

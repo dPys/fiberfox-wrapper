@@ -1,0 +1,3752 @@
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmp95je341r/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpi0bn1k4_/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmppixijjf3/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp4jnzug51/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpj4wtr1we/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp7w0szjr9/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpc25e4gdv/param.ffp
+Parameters file: /tmp/tmpgg4as7xf/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp_w64z4w5/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpp6i3lp53/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp5s4p9bo_/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpemj4pz0i/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Parameters file: /tmp/tmp4jdc5z9h/param.ffp
+Parameters file: /tmp/tmpm7wkpyw3/param.ffp
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpoahnm49d/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp_0xu5gbm/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Traceback (most recent call last):
+  File "simulate_scheme.py", line 622, in <module>
+    outs = parallel(delayed(simulator)(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb) for comb in combs)
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/joblib/parallel.py", line 1054, in __call__
+    self.retrieve()
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/joblib/parallel.py", line 933, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/usr/local/anaconda3/lib/python3.8/multiprocessing/pool.py", line 765, in get
+    self.wait(timeout)
+  File "/usr/local/anaconda3/lib/python3.8/multiprocessing/pool.py", line 762, in wait
+    self._event.wait(timeout)
+  File "/usr/local/anaconda3/lib/python3.8/threading.py", line 558, in wait
+    signaled = self._cond.wait(timeout)
+  File "/usr/local/anaconda3/lib/python3.8/threading.py", line 302, in wait
+    waiter.acquire()
+KeyboardInterrupt
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmp46r8s49t/param.ffp
+Parameters file: /tmp/tmp81pb32ny/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'severe') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmp9v8kswkj/param.ffp
+Parameters file: /tmp/tmpsmgzi8l8/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Parameters file: /tmp/tmpxnt_dwbw/param.ffp
+Copying template files...
+Parameters file: /tmp/tmpuhltybb6/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Parameters file: /tmp/tmp4ql6h18h/param.ffp
+Copying template files...
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmp0h7ts2ft/param.ffp
+Parameters file: /tmp/tmpnu04ga4e/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'mild') 
+
+
+Parameters file: /tmp/tmpbuzdgwf6/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Parameters file: /tmp/tmp6g9hox0b/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmpu7pdr6ok/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Parameters file: /tmp/tmpzhox4yru/param.ffp
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp8t3bsbwi/param.ffp
+Parameters file: /tmp/tmptlnst68g/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpzj464vik/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp9gopw2v2/param.ffp
+Parameters file: /tmp/tmpzz6haa0x/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp2_jhakbl/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpubew3deb/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpih4w1yqg/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpkm8f7rua/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp084uxpky/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpovxeiapc/param.ffp
+Parameters file: /tmp/tmpjbddjiui/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpxjx0rfv9/param.ffp
+Parameters file: /tmp/tmptnjgxt9j/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpxj9f_c95/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpmyt27ohf/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmppp4v9pmh/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpzzjn5bdi/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp6jlpgz1f/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+Traceback (most recent call last):
+  File "simulate_scheme.py", line 624, in <module>
+    main()
+NameError: name 'main' is not defined
+Traceback (most recent call last):
+  File "simulate_scheme.py", line 621, in <module>
+    with Parallel(n_jobs=16, prefer="loky") as parallel:
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/joblib/parallel.py", line 641, in __init__
+    active_backend, context_n_jobs = get_active_backend(
+  File "/usr/local/anaconda3/lib/python3.8/site-packages/joblib/parallel.py", line 79, in get_active_backend
+    raise ValueError("prefer=%r is not a valid backend hint, "
+ValueError: prefer='loky' is not a valid backend hint, expected one of ('processes', 'threads', None)
+Traceback (most recent call last):
+  File "simulate_scheme.py", line 624, in <module>
+    main()
+NameError: name 'main' is not defined
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp56la28cz/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpk734jn12/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp3p764taw/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpm1__vtyp/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpd5ndbu3w/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp1ju4m53m/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpz7almvs_/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpo4q0p4zk/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp2m77yhyo/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmphjw4g74i/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpn5bcon_8/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmphu3idof8/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp3s5coesw/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpwoggg2t_/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpxruwjrj6/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp60iigvrk/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpg2_hetsh/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpy5ug9rs7/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp1p3p9vjm/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp88dolbjl/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpumnfnh0d/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpbu4t1kul/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpqizti249/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp2notnnes/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpahiqf5j4/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp71uv55if/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp3wv2t952/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpcpmbl2cz/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpoho0j8qi/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpqyvtps6z/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmppctwcpa3/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpht8prjnz/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+Traceback (most recent call last):
+  File "simulate_scheme.py", line 624, in <module>
+    main()
+NameError: name 'main' is not defined
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpuealo90w/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp5ymy6_3_/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp85duxjyz/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmppbkoa6wm/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpdzjxaah5/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpujesr1iu/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp5yymh8gc/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpd593lnx3/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpenbbizkj/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp1g8hc3s8/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmppr2c9m6z/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpbe85q59g/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp2jjevcze/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp7_byqo73/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp30sii7z7/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpkk6lzyml/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpo5o4z7qd/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpvrfnrfu1/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpnr0r1b5u/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpg3hvgscv/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmppz9v_02j/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp37lrs_xu/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpj83z23ti/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpij3els4f/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpoi5nxiiz/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp1vfvq6h2/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp5ugpc117/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp01x6d6r0/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp1u49fnzp/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpjrpi8ty6/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp4uos_lr2/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpc6692jot/param.ffp
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmpor5ojbfr/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpor5ojbfr.fib', '-p', '/tmp/tmpor5ojbfr/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpor5ojbfr']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmprt3r6puq/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmprt3r6puq.fib', '-p', '/tmp/tmprt3r6puq/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmprt3r6puq']
+Parameters file: /tmp/tmp9oqi320u/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp9oqi320u.fib', '-p', '/tmp/tmp9oqi320u/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmp9oqi320u']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Parameters file: /tmp/tmpmyp2amon/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpmyp2amon.fib', '-p', '/tmp/tmpmyp2amon/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpmyp2amon']
+Parameters file: /tmp/tmp40l6yci6/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp40l6yci6.fib', '-p', '/tmp/tmp40l6yci6/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp40l6yci6']
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmpivhetssi/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpivhetssi.fib', '-p', '/tmp/tmpivhetssi/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpivhetssi']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpnv7pt8t6/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpnv7pt8t6.fib', '-p', '/tmp/tmpnv7pt8t6/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpnv7pt8t6']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpf4xje3q4/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpf4xje3q4.fib', '-p', '/tmp/tmpf4xje3q4/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpf4xje3q4']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp56e0g54z/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp56e0g54z.fib', '-p', '/tmp/tmp56e0g54z/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp56e0g54z']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmplt0jkszs/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmplt0jkszs.fib', '-p', '/tmp/tmplt0jkszs/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmplt0jkszs']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp0_nnwl2q/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp0_nnwl2q.fib', '-p', '/tmp/tmp0_nnwl2q/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp0_nnwl2q']
+Parameters file: /tmp/tmpra7przap/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpra7przap.fib', '-p', '/tmp/tmpra7przap/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpra7przap']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'severe') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmp4y4an6l_/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp4y4an6l_.fib', '-p', '/tmp/tmp4y4an6l_/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmp4y4an6l_']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp_m5pmh8a/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp_m5pmh8a.fib', '-p', '/tmp/tmp_m5pmh8a/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmp_m5pmh8a']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpjksuo_bm/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpjksuo_bm.fib', '-p', '/tmp/tmpjksuo_bm/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpjksuo_bm']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp5ooe2xgk/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp5ooe2xgk.fib', '-p', '/tmp/tmp5ooe2xgk/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmp5ooe2xgk']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmplemjujh8/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmplemjujh8.fib', '-p', '/tmp/tmplemjujh8/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmplemjujh8']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp567wbzh8/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp567wbzh8.fib', '-p', '/tmp/tmp567wbzh8/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmp567wbzh8']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpau6ihiru/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpau6ihiru.fib', '-p', '/tmp/tmpau6ihiru/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpau6ihiru']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp9x1dykyg/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp9x1dykyg.fib', '-p', '/tmp/tmp9x1dykyg/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp9x1dykyg']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpcjjoa1dn/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpcjjoa1dn.fib', '-p', '/tmp/tmpcjjoa1dn/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpcjjoa1dn']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp009m0uim/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp009m0uim.fib', '-p', '/tmp/tmp009m0uim/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmp009m0uim']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp3ttdu677/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp3ttdu677.fib', '-p', '/tmp/tmp3ttdu677/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp3ttdu677']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpievvpmu1/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpievvpmu1.fib', '-p', '/tmp/tmpievvpmu1/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpievvpmu1']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpimkpdrpc/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpimkpdrpc.fib', '-p', '/tmp/tmpimkpdrpc/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpimkpdrpc']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpucrsv2cm/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpucrsv2cm.fib', '-p', '/tmp/tmpucrsv2cm/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpucrsv2cm']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpbqgwwdzm/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpbqgwwdzm.fib', '-p', '/tmp/tmpbqgwwdzm/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpbqgwwdzm']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpw_bf91pg/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpw_bf91pg.fib', '-p', '/tmp/tmpw_bf91pg/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpw_bf91pg']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpntqvn8l5/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpntqvn8l5.fib', '-p', '/tmp/tmpntqvn8l5/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpntqvn8l5']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmptmid81g8/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmptmid81g8.fib', '-p', '/tmp/tmptmid81g8/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmptmid81g8']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpowr_1khh/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpowr_1khh.fib', '-p', '/tmp/tmpowr_1khh/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpowr_1khh']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp6ptwk84v/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp6ptwk84v.fib', '-p', '/tmp/tmp6ptwk84v/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmp6ptwk84v']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+Traceback (most recent call last):
+  File "simulate_scheme.py", line 622, in <module>
+    loop.run_until_complete(main())
+NameError: name 'main' is not defined
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmpuxbowpeq/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpuxbowpeq.fib', '-p', '/tmp/tmpuxbowpeq/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpuxbowpeq']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp1wq3u168/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp1wq3u168.fib', '-p', '/tmp/tmp1wq3u168/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmp1wq3u168']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp9io1trn6/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp9io1trn6.fib', '-p', '/tmp/tmp9io1trn6/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmp9io1trn6']
+Parameters file: /tmp/tmp863uks1e/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp863uks1e.fib', '-p', '/tmp/tmp863uks1e/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmp863uks1e']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Parameters file: /tmp/tmpnoiwtpwa/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpnoiwtpwa.fib', '-p', '/tmp/tmpnoiwtpwa/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpnoiwtpwa']
+Parameters file: /tmp/tmplen1f507/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmplen1f507.fib', '-p', '/tmp/tmplen1f507/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmplen1f507']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpj9y0y4be/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpj9y0y4be.fib', '-p', '/tmp/tmpj9y0y4be/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpj9y0y4be']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Copying template files...
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpb7i_tm9q/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpb7i_tm9q.fib', '-p', '/tmp/tmpb7i_tm9q/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpb7i_tm9q']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'mild') 
+
+
+Parameters file: /tmp/tmpnlg8981r/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpnlg8981r.fib', '-p', '/tmp/tmpnlg8981r/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpnlg8981r']
+Parameters file: /tmp/tmpy_slw2xv/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpy_slw2xv.fib', '-p', '/tmp/tmpy_slw2xv/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpy_slw2xv']
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpx16om4v2/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpx16om4v2.fib', '-p', '/tmp/tmpx16om4v2/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpx16om4v2']
+Parameters file: /tmp/tmpeeqpwinh/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpeeqpwinh.fib', '-p', '/tmp/tmpeeqpwinh/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpeeqpwinh']
+Parameters file: /tmp/tmp5zj20_r9/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp5zj20_r9.fib', '-p', '/tmp/tmp5zj20_r9/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmp5zj20_r9']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'severe') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp79jxcrgy/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp79jxcrgy.fib', '-p', '/tmp/tmp79jxcrgy/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp79jxcrgy']
+Copying template files...
+Parameters file: /tmp/tmpb48m0f17/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpb48m0f17.fib', '-p', '/tmp/tmpb48m0f17/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpb48m0f17']
+Parameters file: /tmp/tmpdaedho1_/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpdaedho1_.fib', '-p', '/tmp/tmpdaedho1_/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpdaedho1_']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmpbfuaecbq/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpbfuaecbq.fib', '-p', '/tmp/tmpbfuaecbq/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpbfuaecbq']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp57bof802/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp57bof802.fib', '-p', '/tmp/tmp57bof802/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmp57bof802']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp7ql77bp4/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp7ql77bp4.fib', '-p', '/tmp/tmp7ql77bp4/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp7ql77bp4']
+Parameters file: /tmp/tmp4cqiy690/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp4cqiy690.fib', '-p', '/tmp/tmp4cqiy690/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmp4cqiy690']
+Parameters file: /tmp/tmp_24sq2rh/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp_24sq2rh.fib', '-p', '/tmp/tmp_24sq2rh/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp_24sq2rh']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'severe') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmphggqhl5m/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmphggqhl5m.fib', '-p', '/tmp/tmphggqhl5m/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmphggqhl5m']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpbv5fj_ke/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpbv5fj_ke.fib', '-p', '/tmp/tmpbv5fj_ke/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpbv5fj_ke']
+Parameters file: /tmp/tmpvsro0y8n/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpvsro0y8n.fib', '-p', '/tmp/tmpvsro0y8n/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpvsro0y8n']
+Parameters file: /tmp/tmp8cs5qs2w/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp8cs5qs2w.fib', '-p', '/tmp/tmp8cs5qs2w/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmp8cs5qs2w']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'severe') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmpb2es9pnq/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpb2es9pnq.fib', '-p', '/tmp/tmpb2es9pnq/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpb2es9pnq']
+Parameters file: /tmp/tmpapunl9zp/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpapunl9zp.fib', '-p', '/tmp/tmpapunl9zp/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpapunl9zp']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmporx4z85j/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmporx4z85j.fib', '-p', '/tmp/tmporx4z85j/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmporx4z85j']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpr3mxozyc/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpr3mxozyc.fib', '-p', '/tmp/tmpr3mxozyc/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpr3mxozyc']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpkfzhmke7/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpkfzhmke7.fib', '-p', '/tmp/tmpkfzhmke7/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpkfzhmke7']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp01x19kjm/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp01x19kjm.fib', '-p', '/tmp/tmp01x19kjm/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmp01x19kjm']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpxhm2p0v9/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpxhm2p0v9.fib', '-p', '/tmp/tmpxhm2p0v9/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpxhm2p0v9']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'severe') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Copying template files...
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmpz77vqyrx/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpz77vqyrx.fib', '-p', '/tmp/tmpz77vqyrx/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpz77vqyrx']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmptqxf9d2q/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmptqxf9d2q.fib', '-p', '/tmp/tmptqxf9d2q/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmptqxf9d2q']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpremlf0hl/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpremlf0hl.fib', '-p', '/tmp/tmpremlf0hl/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpremlf0hl']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpeene565w/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpeene565w.fib', '-p', '/tmp/tmpeene565w/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpeene565w']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpavu9l_ix/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpavu9l_ix.fib', '-p', '/tmp/tmpavu9l_ix/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpavu9l_ix']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmppogmdr9s/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmppogmdr9s.fib', '-p', '/tmp/tmppogmdr9s/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmppogmdr9s']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpz52_4fbr/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpz52_4fbr.fib', '-p', '/tmp/tmpz52_4fbr/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpz52_4fbr']
+Parameters file: /tmp/tmpx9sq9c8v/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpx9sq9c8v.fib', '-p', '/tmp/tmpx9sq9c8v/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpx9sq9c8v']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp6u4_0nk1/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp6u4_0nk1.fib', '-p', '/tmp/tmp6u4_0nk1/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmp6u4_0nk1']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'mild') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmpmjkaq9mk/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpmjkaq9mk.fib', '-p', '/tmp/tmpmjkaq9mk/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpmjkaq9mk']
+Parameters file: /tmp/tmpc1it5ua_/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpc1it5ua_.fib', '-p', '/tmp/tmpc1it5ua_/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpc1it5ua_']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpi49dn4iu/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpi49dn4iu.fib', '-p', '/tmp/tmpi49dn4iu/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpi49dn4iu']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmphr8upbr3/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmphr8upbr3.fib', '-p', '/tmp/tmphr8upbr3/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmphr8upbr3']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp9ddm6nuy/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp9ddm6nuy.fib', '-p', '/tmp/tmp9ddm6nuy/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp9ddm6nuy']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpwsch8g3j/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpwsch8g3j.fib', '-p', '/tmp/tmpwsch8g3j/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpwsch8g3j']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpyttx1yz4/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpyttx1yz4.fib', '-p', '/tmp/tmpyttx1yz4/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpyttx1yz4']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpf85_vvo6/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpf85_vvo6.fib', '-p', '/tmp/tmpf85_vvo6/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpf85_vvo6']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpr0ritrzt/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpr0ritrzt.fib', '-p', '/tmp/tmpr0ritrzt/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpr0ritrzt']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp_wznfbk8/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp_wznfbk8.fib', '-p', '/tmp/tmp_wznfbk8/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmp_wznfbk8']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'severe') 
+
+
+Parameters file: /tmp/tmpume3xzp6/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpume3xzp6.fib', '-p', '/tmp/tmpume3xzp6/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpume3xzp6']
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpaqlls8k3/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpaqlls8k3.fib', '-p', '/tmp/tmpaqlls8k3/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpaqlls8k3']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp18qxi73w/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp18qxi73w.fib', '-p', '/tmp/tmp18qxi73w/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmp18qxi73w']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmps88klv2m/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmps88klv2m.fib', '-p', '/tmp/tmps88klv2m/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmps88klv2m']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpc99nrv_6/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpc99nrv_6.fib', '-p', '/tmp/tmpc99nrv_6/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpc99nrv_6']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpt6ejmbh2/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpt6ejmbh2.fib', '-p', '/tmp/tmpt6ejmbh2/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpt6ejmbh2']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'severe') 
+
+
+Parameters file: /tmp/tmpj2ob8uto/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpj2ob8uto.fib', '-p', '/tmp/tmpj2ob8uto/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpj2ob8uto']
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpln8x6rlt/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpln8x6rlt.fib', '-p', '/tmp/tmpln8x6rlt/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpln8x6rlt']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpv1kg7ouj/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpv1kg7ouj.fib', '-p', '/tmp/tmpv1kg7ouj/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpv1kg7ouj']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpl5vaa0w5/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpl5vaa0w5.fib', '-p', '/tmp/tmpl5vaa0w5/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpl5vaa0w5']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp5_2u7jaf/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp5_2u7jaf.fib', '-p', '/tmp/tmp5_2u7jaf/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmp5_2u7jaf']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp_vxkwmvt/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp_vxkwmvt.fib', '-p', '/tmp/tmp_vxkwmvt/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmp_vxkwmvt']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpa7scg9p4/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpa7scg9p4.fib', '-p', '/tmp/tmpa7scg9p4/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpa7scg9p4']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'severe') 
+
+
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.25, 'mild') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'severe') 
+
+
+
+
+ SingleShell (True, True, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Copying template files...
+Copying template files...
+Copying template files...
+Parameters file: /tmp/tmphkh1v7di/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmphkh1v7di.fib', '-p', '/tmp/tmphkh1v7di/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmphkh1v7di']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpljayeri9/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpljayeri9.fib', '-p', '/tmp/tmpljayeri9/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpljayeri9']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmphk7kgqr9/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmphk7kgqr9.fib', '-p', '/tmp/tmphk7kgqr9/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmphk7kgqr9']
+Parameters file: /tmp/tmpgvrsslsj/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpgvrsslsj.fib', '-p', '/tmp/tmpgvrsslsj/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpgvrsslsj']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpxrwqk9f3/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpxrwqk9f3.fib', '-p', '/tmp/tmpxrwqk9f3/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpxrwqk9f3']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp3wl0kps3/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp3wl0kps3.fib', '-p', '/tmp/tmp3wl0kps3/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp3wl0kps3']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpqd6qo_9i/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpqd6qo_9i.fib', '-p', '/tmp/tmpqd6qo_9i/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpqd6qo_9i']
+Parameters file: /tmp/tmpfmjj49hd/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpfmjj49hd.fib', '-p', '/tmp/tmpfmjj49hd/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmpfmjj49hd']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpv9s_s9j0/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpv9s_s9j0.fib', '-p', '/tmp/tmpv9s_s9j0/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpv9s_s9j0']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpajvc9ice/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpajvc9ice.fib', '-p', '/tmp/tmpajvc9ice/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpajvc9ice']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp1du5ts8n/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp1du5ts8n.fib', '-p', '/tmp/tmp1du5ts8n/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmp1du5ts8n']
+Parameters file: /tmp/tmpzqifroua/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpzqifroua.fib', '-p', '/tmp/tmpzqifroua/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpzqifroua']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp1lbpjghe/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp1lbpjghe.fib', '-p', '/tmp/tmp1lbpjghe/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmp1lbpjghe']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpm0t1o9zx/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpm0t1o9zx.fib', '-p', '/tmp/tmpm0t1o9zx/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpm0t1o9zx']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpqzrnoue2/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpqzrnoue2.fib', '-p', '/tmp/tmpqzrnoue2/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpqzrnoue2']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpi959f5cr/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpi959f5cr.fib', '-p', '/tmp/tmpi959f5cr/fbfx_SEQ-SingleShell_HM_TYPE-random-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpi959f5cr']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpihuv4gyq/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpihuv4gyq.fib', '-p', '/tmp/tmpihuv4gyq/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpihuv4gyq']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp3kqqhz8c/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp3kqqhz8c.fib', '-p', '/tmp/tmp3kqqhz8c/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp3kqqhz8c']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpquj5fgwx/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpquj5fgwx.fib', '-p', '/tmp/tmpquj5fgwx/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpquj5fgwx']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp1ry03suo/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp1ry03suo.fib', '-p', '/tmp/tmp1ry03suo/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp1ry03suo']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpap1p5ndf/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpap1p5ndf.fib', '-p', '/tmp/tmpap1p5ndf/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpap1p5ndf']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp7j693qpd/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp7j693qpd.fib', '-p', '/tmp/tmp7j693qpd/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp7j693qpd']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpjh9k3wb0/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpjh9k3wb0.fib', '-p', '/tmp/tmpjh9k3wb0/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-severe.ffp', '--verbose', '-o', '/tmp/tmpjh9k3wb0']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp5da_uyg8/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp5da_uyg8.fib', '-p', '/tmp/tmp5da_uyg8/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%_EDDY-LEVEL-mild.ffp', '--verbose', '-o', '/tmp/tmp5da_uyg8']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpw4pfz27e/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpw4pfz27e.fib', '-p', '/tmp/tmpw4pfz27e/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpw4pfz27e']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp6zaucg8s/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp6zaucg8s.fib', '-p', '/tmp/tmp6zaucg8s/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmp6zaucg8s']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpvg2ae13n/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpvg2ae13n.fib', '-p', '/tmp/tmpvg2ae13n/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmpvg2ae13n']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp976iis1d/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp976iis1d.fib', '-p', '/tmp/tmp976iis1d/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-severe-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmp976iis1d']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (True, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpalz_41dg/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpalz_41dg.fib', '-p', '/tmp/tmpalz_41dg/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpalz_41dg']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmpob6t_po6/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmpob6t_po6.fib', '-p', '/tmp/tmpob6t_po6/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-25.0%.ffp', '--verbose', '-o', '/tmp/tmpob6t_po6']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+Parameters file: /tmp/tmp6xanllnx/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmp6xanllnx.fib', '-p', '/tmp/tmp6xanllnx/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmp6xanllnx']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+Parameters file: /tmp/tmptgocrb72/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp
+['bash', '/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh', '-i', '/var/tmp/Fibers_tmptgocrb72.fib', '-p', '/tmp/tmptgocrb72/fbfx_SEQ-SingleShell_HM_TYPE-linear-LEVEL-mild-EXTENT-75.0%.ffp', '--verbose', '-o', '/tmp/tmptgocrb72']
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, True, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, True, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'severe', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.25, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'severe') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+
+
+ SingleShell (False, False, False, False, 'mild', 0.75, 'mild') 
+
+
+Copying template files...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
+FiberFoxSimulation failed for SingleShell...
