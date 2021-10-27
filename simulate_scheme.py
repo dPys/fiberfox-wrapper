@@ -125,8 +125,7 @@ class FiberFoxSimulation(object):
         self.b2q = b2q
         self.artifactmodelstring = artifactmodelstring
         self.output_ffp = os.path.join(self.dirpath, f"param.ffp")
-        self.rotation0, self.rotation1, self.rotation2,
-        self.translation0, self.translation1, self.translation2 = motion_bounds
+        self.rotation0, self.rotation1, self.rotation2, self.translation0, self.translation1, self.translation2 = motion_bounds
 
     def ffp_string(self):
         ffp = """<?xml version="1.0" encoding="utf-8"?>
@@ -287,8 +286,7 @@ class FiberFoxSimulation(object):
         return image_str
 
     def _format_image_basic(self):
-        xvoxels, yvoxels, zvoxels = (
-        self.default_fov / self.voxel_size).astype(np.int32)
+        xvoxels, yvoxels, zvoxels = (self.default_fov / self.voxel_size).astype(np.int32)
         basic_str = """\
     <basic>
       <size>
@@ -341,8 +339,7 @@ class FiberFoxSimulation(object):
         direction_elements = []
         for dirnum, scaled_vector in enumerate(scaled_vectors):
               x, y, z = scaled_vector
-              direction_elements.append(dir_str.format(x=x, y=y, z=z,
-              dirnum=dirnum))
+              direction_elements.append(dir_str.format(x=x, y=y, z=z, dirnum=dirnum))
 
         gradient_str = """\
     <gradients>
@@ -543,7 +540,7 @@ def simulate(bvecs_file, bvals_file, output_dir, run_method, sim_templates_dir,
     dirpath = tempfile.mkdtemp()
     req_fils = glob.glob(f"{sim_templates_dir}/*")
 
-    fiber_tmp = f"/var/tmp/{output_dir}/Fibers.fib"
+    fiber_tmp = f"{dirpath}/Fibers_{os.path.basename(dirpath)}.fib"
 
     print("Copying template files...")
     for f_ in req_fils:
