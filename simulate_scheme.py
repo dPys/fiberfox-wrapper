@@ -12,6 +12,19 @@ from joblib import Parallel, delayed
 from pathlib import Path
 from nipype.utils.filemanip import copyfile, fname_presuffix
 
+
+def run_command(command):
+    process = subprocess.Popen(command, stdout=subprocess.PIPE)
+    while True:
+        output = process.stdout.readline()
+        if output == '' and process.poll() is not None:
+            break
+        if output:
+            print(output.strip())
+    rc = process.poll()
+    return rc
+
+
 default_args = dict(
     acquisitiontype=0,
     coilsensitivityprofile=0,
@@ -111,8 +124,9 @@ class FiberFoxSimulation(object):
         self.eddyStrength = eddyStrength
         self.b2q = b2q
         self.artifactmodelstring = artifactmodelstring
-        self.output_ffp = os.path.join(self.dirpath, f"{artifactmodelstring}.ffp")
-        self.rotation0, self.rotation1, self.rotation2, self.translation0, self.translation1, self.translation2 = motion_bounds
+        self.output_ffp = os.path.join(self.dirpath, f"param.ffp")
+        self.rotation0, self.rotation1, self.rotation2,
+        self.translation0, self.translation1, self.translation2 = motion_bounds
 
     def ffp_string(self):
         ffp = """<?xml version="1.0" encoding="utf-8"?>
@@ -273,7 +287,8 @@ class FiberFoxSimulation(object):
         return image_str
 
     def _format_image_basic(self):
-        xvoxels, yvoxels, zvoxels = (self.default_fov / self.voxel_size).astype(np.int32)
+        xvoxels, yvoxels, zvoxels = (
+        self.default_fov / self.voxel_size).astype(np.int32)
         basic_str = """\
     <basic>
       <size>
@@ -326,7 +341,8 @@ class FiberFoxSimulation(object):
         direction_elements = []
         for dirnum, scaled_vector in enumerate(scaled_vectors):
               x, y, z = scaled_vector
-              direction_elements.append(dir_str.format(x=x, y=y, z=z, dirnum=dirnum))
+              direction_elements.append(dir_str.format(x=x, y=y, z=z,
+              dirnum=dirnum))
 
         gradient_str = """\
     <gradients>
@@ -423,13 +439,15 @@ class FiberFoxSimulation(object):
                   f"-o",
                   f"{self.dirpath}"]
 
-        print(cmd)
-        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, text=True)
-        (output, err) = p.communicate()
-        p_status = p.wait()
+        p_status = run_command(cmd)
+
         if (p_status == 0):
             return output
         else:
+            print("\n\n")
+            print(' '.join(cmd))
+            print(err)
+            print("\n\n")
             raise subprocess.ProcessException(cmd, p_status, err)
 
 
@@ -525,7 +543,7 @@ def simulate(bvecs_file, bvals_file, output_dir, run_method, sim_templates_dir,
     dirpath = tempfile.mkdtemp()
     req_fils = glob.glob(f"{sim_templates_dir}/*")
 
-    fiber_tmp = f"/var/tmp/Fibers_{os.path.basename(dirpath)}.fib"
+    fiber_tmp = f"/var/tmp/{output_dir}/Fibers.fib"
 
     print("Copying template files...")
     for f_ in req_fils:
@@ -537,7 +555,7 @@ def simulate(bvecs_file, bvals_file, output_dir, run_method, sim_templates_dir,
             use_hardlink=False)
         else:
             f_tmp_path = fname_presuffix(
-                f_, suffix="_tmp", newpath=dirpath
+                f_, suffix="", newpath=dirpath
             )
             copyfile(
             f_,
@@ -598,8 +616,10 @@ def simulator(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_metho
              voxel_size=2, head_motion=head_motion, random_motion=random_motion, eddy=eddy, reverse_phase=reverse_phase, motion_level=motion_level, motion_percent_vols=motion_percent_vols, eddy_level=eddy_level)
     return
 
+
 if __name__ == '__main__':
-    choices = [[True, False], [True, False], [True, False], [False], ["severe", "mild"], [0.25, 0.75], ["severe", "mild"]]
+    #choices = [[True, False], [True, False], [True, False], [False], ["severe", "mild"], [0.25, 0.75], ["severe", "mild"]]
+    choices = [[True], [False], [False], [False], ["severe"], [0.75], ["mild"]]
     combs = list(itertools.product(*choices))
 
     gradients_dir = f"/home/dpys/Applications/fiberfox-wrapper/gradients"
@@ -614,9 +634,25 @@ if __name__ == '__main__':
     #run_method = "/home/dpys/Applications/fiberfox-wrapper/fiberfox.simg"
     run_method = "/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh" # options are "Docker", "PATH/TO/*.simg", "PATH/TO/MitkFiberfox.sh"
 
-    for grad_pref in grad_prefixes:
-        with Parallel(n_jobs=4, backend='threading') as parallel:
-            outs = parallel(delayed(simulator)(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb) for comb in combs)
+    async def main():
+        for grad_pref in grad_prefixes:
+            for purgable_tmp in glob.glob("/var/tmp/*") + glob.glob("/tmp/*"):
+                if os.access(purgable_tmp, os.W_OK) is True:
+                    if os.path.isfile(purgable_tmp):
+                        os.remove(purgable_tmp)
+                    else:
+                        shutil.rmtree(purgable_tmp)
 
-#loop = asyncio.get_event_loop()
-#loop.run_until_complete(main())
+            # for comb in combs:
+            #     simulator(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb)
+            with Parallel(n_jobs=8, backend='loky') as parallel:
+                outs = parallel(delayed(simulator)(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb) for comb in combs)
+
+            await asyncio.sleep(0.2)
+
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())
+
+#ps -ef | grep 'MitkFiberfox' | grep -v grep | awk '{print $2}' | xargs -r kill -9
+#ps -ef | grep 'fiberfox' | grep -v grep | awk '{print $2}' | xargs -r kill -9
+
