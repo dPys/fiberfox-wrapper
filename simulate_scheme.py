@@ -14,14 +14,27 @@ from nipype.utils.filemanip import copyfile, fname_presuffix
 
 
 def run_command(command):
-    process = subprocess.Popen(command, stdout=subprocess.PIPE)
-    while True:
-        output = process.stdout.readline()
-        if output == '' and process.poll() is not None:
-            break
-        if output:
-            print(output.strip())
-    rc = process.poll()
+    print('[run_command] Running command: ' + command)
+    # process = subprocess.Popen(command, stdout=subprocess.PIPE)
+    # process = subprocess.call(command, shell=True, stdout=subprocess.PIPE)
+    # process = subprocess.run(command, shell=True, capture_output=True, universal_newlines=True))
+    process = subprocess.run(command, shell=True, universal_newlines=True)
+    print('[run_command]           ...ended running command')
+    
+    # while True:
+    #     output = process.stdout.readline()
+    #     if output == '' and process.poll() is not None:
+    #         break
+    #     if output:
+    #         print(output.strip())
+    # rc = process.poll()
+
+
+    rc = process.returncode
+    print('[run_command] This is the return code:  ' + str(rc))
+    # print('[run_command] This is the stdout: \n' + process.stdout)
+    # print('[run_command] This is the stderr: \n' + process.stderr)
+    
     return rc
 
 
@@ -400,20 +413,31 @@ class FiberFoxSimulation(object):
             #time.sleep(2)
 
     def run_simulation(self, run_method, fiber_tmp):
+        print('[run_simulation] Running self.write...')
         self.write_ffp()
+        print('[run_simulation] ...done')
 
+        
+        print('[run_simulation] run_method is: '+ run_method)
         if run_method == "Docker":
-            cmd = ["bash", f"docker run",
-                  f"-v",
-                  f"{self.dirpath}:/out",
-                  f"pennbbl/fiberfox:latest",
-                  f"-i",
-                  f"/ismrm/FilesForSimulation/Fibers.fib",
-                  f"-p",
-                  f"{self.output_ffp}",
-                  f"--verbose",
-                  f"-o",
-                  f"/outs"]
+            cmd = str("docker run -v " + self.dirpath + ":/out " +
+                      "-v /black/localhome/glerma/TESTDATA/FiberFox/FilesForSimulation:/fibs " +
+                      "-v /black/localhome/glerma/TESTDATA/FiberFox/output:/output " +
+                      "pennbbl/fiberfox:latest " + 
+                      "-i /fibs/Fibers.fib -p /out/param.ffp --verbose -o /output/out")
+
+            # cmd = ["bash", f"docker run",
+            #       f"-v",
+            #       f"{self.dirpath}:/out",
+            #       f"pennbbl/fiberfox:latest",
+            #       f"-i",
+            #       f"/black/localhome/glerma/TESTDATA/FiberFox/FilesForSimulation/Fibers.fib",
+            #       f"-p",
+            #       f"{self.output_ffp}",
+            #       f"--verbose",
+            #       f"-o",
+            #       f"/outs"]
+            print('[run_simulation] This command will be used to run it: ' + cmd)
         elif run_method.endswith(".simg"):
             cmd = ["bash", f"singularity run",
                   f"-B",
@@ -426,26 +450,34 @@ class FiberFoxSimulation(object):
                   f"--verbose",
                   f"-o",
                   f"/out"]
+            print('[run_simulation] This command will be used to run it: ' + cmd)
         else:
-            cmd = ["bash", run_method,
-                  f"-i",
-                  fiber_tmp,
-                  f"-p",
-                  f"{self.output_ffp}",
-                  f"--verbose",
-                  f"-o",
-                  f"{self.dirpath}"]
-
+            # print('[run_simulation] Building the command. dirpath is ' + self.dirpath)
+            # print('[run_simulation] Building the command. fiber_tmp is ' + fiber_tmp)
+            # print('[run_simulation] Building the command. output_ffp is ' + self.output_ffp)
+            cmd = 'bash ' +  run_method + ' -i ' + fiber_tmp + ' -p ' + self.output_ffp + ' --verbose ' + ' -o ' + self.dirpath
+            # cmd = ["bash", run_method,
+            #      f"-i",
+            #      fiber_tmp,
+            #      f"-p",
+            #      f"{self.output_ffp}",
+            #      f"--verbose",
+            #      f"-o",
+            #      f"{self.dirpath}"]
+            print('[run_simulation] This command will be used to run it: ' + cmd)
+        
         p_status = run_command(cmd)
 
-        if (p_status == 0):
-            return output
-        else:
-            print("\n\n")
-            print(' '.join(cmd))
-            print(err)
-            print("\n\n")
-            raise subprocess.ProcessException(cmd, p_status, err)
+        print('[run_simulation] run_command returned with status: ' + str(p_status))
+        
+        # if (p_status == 0):
+        #     return output
+        # else:
+        #     print("\n\n")
+        #     print(' '.join(cmd))
+        #     print(err)
+        #     print("\n\n")
+        #     raise subprocess.ProcessException(cmd, p_status, err)
 
 
 def simulate(bvecs_file, bvals_file, output_dir, run_method, sim_templates_dir,
@@ -537,7 +569,8 @@ def simulate(bvecs_file, bvals_file, output_dir, run_method, sim_templates_dir,
 
     default_fov = np.array([90, 108, 90]) * voxel_size
 
-    dirpath = tempfile.mkdtemp()
+    # dirpath = tempfile.mkdtemp()
+    dirpath = "/black/localhome/glerma/TESTDATA/FiberFox/tmp"
     req_fils = glob.glob(f"{sim_templates_dir}/*")
 
     fiber_tmp = f"{dirpath}/Fibers_{os.path.basename(dirpath)}.fib"
@@ -569,6 +602,7 @@ def simulate(bvecs_file, bvals_file, output_dir, run_method, sim_templates_dir,
     out_basename = f"{output_dir}/{artifactmodelstring}"
 
     try:
+        print('[simulate] Trying to create simulator with FiberFoxSimulation...')
         simulator = FiberFoxSimulation(bvals_arr,
                                        np.loadtxt(bvecs_file).T,
                                        dirpath,
@@ -584,8 +618,13 @@ def simulate(bvecs_file, bvals_file, output_dir, run_method, sim_templates_dir,
                                        artifactmodelstring=artifactmodelstring,
                                        b2q=b2q,
                                        **default_args)
-        simulator.run_simulation(run_method=run_method, fiber_tmp=fiber_tmp)
+        print('[simulate] ...done.')
 
+        print('[simulate] Trying to run simulator.run_simulation ...')
+        simulator.run_simulation(run_method=run_method, fiber_tmp=fiber_tmp)
+        print('[simulate] ...done.')
+
+        print('[simulate] Copying data to the output folder...')
         shutil.copy(f"{dirpath}/fiberfox.nii.gz", f"{out_basename}.nii.gz")
         shutil.copy(f"{dirpath}/fiberfox_Phase.nii.gz", f"{out_basename}_phase.nii.gz")
         shutil.copy(f"{dirpath}/fiberfox_kSpace.nii.gz", f"{out_basename}_kspace.nii.gz")
@@ -596,12 +635,20 @@ def simulate(bvecs_file, bvals_file, output_dir, run_method, sim_templates_dir,
 
         with open(f"{out_basename}_info.json", 'w', encoding='utf-8') as f:
             json.dump(detailed_data, f, ensure_ascii=False, indent=4)
+        print('[simulate] ...done.')
 
     except:
-        return print(f"FiberFoxSimulation failed for {seq_name}...")
+        return print(f"[simulate] FiberFoxSimulation failed for {seq_name}...")
+        
+    print('[simulate] Deleting ' + dirpath)
     shutil.rmtree(dirpath)
-    os.remove(fiber_tmp)
+    print('[simulate] ...done.')
 
+    print('[simulate] Deleting ' + fiber_tmp)
+    os.remove(fiber_tmp)
+    print('[simulate] ...done.')
+
+    print('[simulate] Done.')
 
 def simulator(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb):
     [head_motion, random_motion, eddy, reverse_phase, motion_level, motion_percent_vols, eddy_level] = comb
@@ -619,17 +666,22 @@ if __name__ == '__main__':
     choices = [[True], [False], [False], [False], ["severe"], [0.75], ["mild"]]
     combs = list(itertools.product(*choices))
 
-    gradients_dir = f"/home/dpys/Applications/fiberfox-wrapper/gradients"
-    sim_templates_dir = "/home/dpys/Applications/FilesForSimulation"
-    output_dir = "/mnt/dpys/data/fiberfox_sims"
+    # gradients_dir = f"/home/dpys/Applications/fiberfox-wrapper/gradients"
+    # sim_templates_dir = "/home/dpys/Applications/FilesForSimulation"
+    # output_dir = "/mnt/dpys/data/fiberfox_sims"
+    gradients_dir     = f"/data/localhome/glerma/soft/fiberfox-wrapper/gradients"
+    sim_templates_dir = f"/black/localhome/glerma/TESTDATA/FiberFox/FilesForSimulation"
+    output_dir        = f"/black/localhome/glerma/TESTDATA/FiberFox/output"
 
     grad_prefixes = [j for j in set([os.path.basename(i).split('.bvec')[0] for i in glob.glob(f"{gradients_dir}/*")]) if 'bval' not in j]
 
     #grad_prefixes = ['hcp_multishell', 'SingleShell']
     grad_prefixes = ['SingleShell']
 
-    #run_method = "/home/dpys/Applications/fiberfox-wrapper/fiberfox.simg"
-    run_method = "/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh" # options are "Docker", "PATH/TO/*.simg", "PATH/TO/MitkFiberfox.sh"
+    run_method = "Docker" 
+    # run_method = "/home/dpys/Applications/fiberfox-wrapper/fiberfox.simg"
+    # run_method = "/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh" # options are "Docker", "PATH/TO/*.simg", "PATH/TO/MitkFiberfox.sh"
+    # run_method = "/data/localhome/glerma/soft/fiberfox-bin/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh" # options are "Docker", "PATH/TO/*.simg", "PATH/TO/MitkFiberfox.sh"
 
     async def main():
         for grad_pref in grad_prefixes:
@@ -638,11 +690,11 @@ if __name__ == '__main__':
                     if os.path.isfile(purgable_tmp):
                         os.remove(purgable_tmp)
                     else:
-                        shutil.rmtree(purgable_tmp)
-
+                        # shutil.rmtree(purgable_tmp)
+                        print('Was trying to delete ' + purgable_tmp)
             # for comb in combs:
             #     simulator(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb)
-            with Parallel(n_jobs=8, backend='loky') as parallel:
+            with Parallel(n_jobs=40, backend='loky') as parallel: # if loky does not work use threading
                 outs = parallel(delayed(simulator)(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb) for comb in combs)
 
             await asyncio.sleep(0.2)
