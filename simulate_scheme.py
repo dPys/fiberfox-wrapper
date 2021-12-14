@@ -627,7 +627,7 @@ if __name__ == '__main__':
     grad_prefixes = [j for j in set([os.path.basename(i).split('.bvec')[0] for i in glob.glob(f"{gradients_dir}/*")]) if 'bval' not in j]
 
     #grad_prefixes = ['hcp_multishell', 'SingleShell']
-    grad_prefixes = ['SingleShell']
+    grad_prefixes = ['ISMRM2015']
 
     #run_method = "/home/dpys/Applications/fiberfox-wrapper/fiberfox.simg"
     run_method = "/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh" # options are "Docker", "PATH/TO/*.simg", "PATH/TO/MitkFiberfox.sh"
