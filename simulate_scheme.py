@@ -503,7 +503,7 @@ def simulate(bvecs_file, bvals_file, output_dir, run_method, sim_templates_dir,
             translation1 = 2
             translation2 = 2
     else:
-        motion_volumes = (0)
+        motion_volumes = tuple(np.random.randint(0, num_vols, (1, num_noise_vols)).tolist()[0])
         doAddMotion = "false"
         randomMotion = "false"
         rotation0 = 0
@@ -616,12 +616,12 @@ def simulator(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_metho
 
 if __name__ == '__main__':
     #choices = [[True, False], [True, False], [True, False], [False], ["severe", "mild"], [0.25, 0.75], ["severe", "mild"]]
-    choices = [[True], [False], [False], [False], ["severe"], [0.75], ["mild"]]
+    choices = [[False], [False], [False, True], [False], ["severe"], [0.75], ["severe"]]
     combs = list(itertools.product(*choices))
 
     gradients_dir = f"/home/dpys/Applications/fiberfox-wrapper/gradients"
     sim_templates_dir = "/home/dpys/Applications/FilesForSimulation"
-    output_dir = "/mnt/dpys/data/fiberfox_sims"
+    output_dir = "/home/dpys/fiberfox_sims"
 
     grad_prefixes = [j for j in set([os.path.basename(i).split('.bvec')[0] for i in glob.glob(f"{gradients_dir}/*")]) if 'bval' not in j]
 
@@ -631,25 +631,18 @@ if __name__ == '__main__':
     #run_method = "/home/dpys/Applications/fiberfox-wrapper/fiberfox.simg"
     run_method = "/home/dpys/Applications/MITK-Diffusion-2018.09.99-linux-x86_64/MitkFiberfox.sh" # options are "Docker", "PATH/TO/*.simg", "PATH/TO/MitkFiberfox.sh"
 
-    async def main():
-        for grad_pref in grad_prefixes:
-            for purgable_tmp in glob.glob("/var/tmp/*") + glob.glob("/tmp/*"):
-                if os.access(purgable_tmp, os.W_OK) is True:
-                    if os.path.isfile(purgable_tmp):
-                        os.remove(purgable_tmp)
-                    else:
-                        shutil.rmtree(purgable_tmp)
+    for grad_pref in grad_prefixes:
+        for purgable_tmp in glob.glob("/var/tmp/*") + glob.glob("/tmp/*"):
+            if os.access(purgable_tmp, os.W_OK) is True:
+                if os.path.isfile(purgable_tmp):
+                    os.remove(purgable_tmp)
+                else:
+                    shutil.rmtree(purgable_tmp)
 
-            # for comb in combs:
-            #     simulator(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb)
-            with Parallel(n_jobs=8, backend='loky') as parallel:
-                outs = parallel(delayed(simulator)(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb) for comb in combs)
-
-            await asyncio.sleep(0.2)
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(main())
+        # for comb in combs:
+        #     simulator(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb)
+        with Parallel(n_jobs=8, backend='loky') as parallel:
+            outs = parallel(delayed(simulator)(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_method, comb) for comb in combs)
 
 #ps -ef | grep 'MitkFiberfox' | grep -v grep | awk '{print $2}' | xargs -r kill -9
 #ps -ef | grep 'fiberfox' | grep -v grep | awk '{print $2}' | xargs -r kill -9
-
