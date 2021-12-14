@@ -593,6 +593,7 @@ def simulate(bvecs_file, bvals_file, output_dir, run_method, sim_templates_dir,
         shutil.copy(f"{dirpath}/fiberfox_Coil-1-imag.nii.gz", f"{out_basename}_Coil-1-imag.nii.gz")
         shutil.copy(f"{dirpath}/fiberfox.bvecs", f"{out_basename}.bvecs")
         shutil.copy(f"{dirpath}/fiberfox.bvals", f"{out_basename}.bvals")
+        shutil.copy(f"{dirpath}/fiberfox.log", f"{out_basename}.log")
 
         with open(f"{out_basename}_info.json", 'w', encoding='utf-8') as f:
             json.dump(detailed_data, f, ensure_ascii=False, indent=4)
@@ -616,7 +617,7 @@ def simulator(grad_pref, output_dir, gradients_dir, sim_templates_dir, run_metho
 
 if __name__ == '__main__':
     #choices = [[True, False], [True, False], [True, False], [False], ["severe", "mild"], [0.25, 0.75], ["severe", "mild"]]
-    choices = [[False], [False], [False, True], [False], ["severe"], [0.75], ["severe"]]
+    choices = [[False, True], [False], [False, True], [False], ["severe"], [0.75], ["severe"]]
     combs = list(itertools.product(*choices))
 
     gradients_dir = f"/home/dpys/Applications/fiberfox-wrapper/gradients"
